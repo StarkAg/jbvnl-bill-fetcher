@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.stark.jbvnl-billfetch</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>__PROJECT_DIR__/venv/bin/python</string>
+        <string>__PROJECT_DIR__/fetch_bills.py</string>
+    </array>
+
+    <!-- .env lives here, so run from the project dir -->
+    <key>WorkingDirectory</key>
+    <string>__PROJECT_DIR__</string>
+
+    <!-- Run on the 8th of every month at 10:00 (bills issue ~5th). If the Mac is
+         asleep then, launchd runs it on next wake. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key><integer>8</integer>
+        <key>Hour</key><integer>10</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>__PROJECT_DIR__/fetch.log</string>
+    <key>StandardErrorPath</key>
+    <string>__PROJECT_DIR__/fetch.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

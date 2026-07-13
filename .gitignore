@@ -1,0 +1,8 @@
+.env
+venv/
+error_*.png
+fetch.log
+lastrun.log
+__pycache__/
+# local (personal-path) launchd job — commit the .template instead
+com.stark.jbvnl-billfetch.plist
